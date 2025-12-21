@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi tiết Môn học &amp; Bài học</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f4af25",
+              "background-light": "#fcfbf8", 
+              "background-dark": "#221c10",
+              "text-main": "#1c170d",
+              "text-secondary": "#9c8149",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", 
+              "lg": "1rem", 
+              "xl": "1.5rem", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 antialiased overflow-x-hidden transition-colors duration-200">
+<div class="flex h-screen w-full flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#f4efe7] dark:border-gray-800 bg-background-light dark:bg-background-dark px-4 md:px-6 py-3 z-20 shrink-0 sticky top-0">
+<div class="flex items-center gap-3 text-text-main dark:text-white">
+<button class="md:hidden p-1 -ml-1 text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl md:text-4xl icon-filled">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-base md:text-lg font-bold leading-tight tracking-[-0.015em] truncate max-w-[200px] sm:max-w-none">Trường Tiểu Học Ngôi Sao</h2>
+</div>
+<div class="flex items-center gap-4 md:gap-6">
+<button class="flex items-center justify-center rounded-xl h-9 w-9 md:h-10 md:w-10 bg-[#f4efe7] dark:bg-gray-800 text-text-main dark:text-white hover:bg-primary/20 transition-colors relative">
+<span class="material-symbols-outlined text-[20px] md:text-[24px]">notifications</span>
+<span class="absolute top-2 right-2.5 h-2 w-2 rounded-full bg-red-500 border border-white dark:border-gray-800"></span>
+</button>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold text-text-main dark:text-white">Nguyễn Văn A</p>
+<p class="text-xs text-text-secondary dark:text-gray-400">Giáo viên chủ nhiệm</p>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 md:size-10 border-2 border-primary/20 cursor-pointer hover:border-primary transition-colors" data-alt="Portrait of a smiling teacher" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMnF5MEXLUjQurAOET6eEp1o67flFnc0eOz2Tqqr03opY-FtFXcBPRXyNQ6WgSJSAB2mWWftim97FrjbWZP1go7Lvh2AtHAkjauXrg6FJeBpBvHIX5pGBPeWJ8H2qX8zEBgqcJ0MkgBAEsmBzAcmRXkY67qYnqN33emGq5kE676Hx4UNEiQo0ZGcFP9bs7kRzDcRhAf8CMaMP6rv81Hzy-CN8Sb12lhAWaccZLqlhxo_dwJsQALOz7lh3uOf7hZLyqtBcyqZptTCUy");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<aside class="hidden md:flex w-64 flex-col border-r border-[#f4efe7] dark:border-gray-800 bg-background-light dark:bg-background-dark p-4 shrink-0 overflow-y-auto">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">dashboard</span>
+<p class="text-text-main dark:text-gray-200 text-sm font-medium">Tổng quan</p>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<p class="px-3 text-xs font-bold text-text-secondary uppercase tracking-wider mb-1">Lớp Học</p>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 border border-primary/20 cursor-pointer">
+<span class="material-symbols-outlined text-primary icon-filled">groups</span>
+<p class="text-text-main dark:text-white text-sm font-bold">Lớp 5A</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">groups</span>
+<p class="text-text-main dark:text-gray-200 text-sm font-medium">Lớp 5B</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-4">
+<p class="px-3 text-xs font-bold text-text-secondary uppercase tracking-wider mb-1">Tài nguyên</p>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">local_library</span>
+<p class="text-text-main dark:text-gray-200 text-sm font-medium">Thư viện</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-[#f4efe7] dark:border-gray-800">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-800 cursor-pointer transition-colors group">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">settings</span>
+<p class="text-text-main dark:text-gray-200 text-sm font-medium">Cài đặt</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto bg-white dark:bg-[#1a160c]">
+<div class="container mx-auto max-w-[1200px] p-4 md:p-6 lg:p-10 flex flex-col gap-6">
+<nav class="flex flex-wrap gap-2 text-sm px-1">
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">Trang chủ</a>
+<span class="text-text-secondary">/</span>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">Lớp 5A</a>
+<span class="text-text-secondary">/</span>
+<span class="text-text-main dark:text-white font-medium">Môn Toán</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-5 border-b border-[#f4efe7] dark:border-gray-800 pb-6">
+<div class="flex items-start gap-4">
+<div class="flex shrink-0 h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all">
+<span class="material-symbols-outlined text-3xl md:text-4xl icon-filled">calculate</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-0.5">
+<h1 class="text-text-main dark:text-white text-2xl sm:text-3xl md:text-4xl font-black tracking-tight leading-tight">Môn Toán - Lớp 5</h1>
+<p class="text-text-secondary dark:text-gray-400 text-sm md:text-base flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">calendar_month</span>
+                                    Học kì 1 • Năm học 2023-2024
+                                </p>
+</div>
+</div>
+<button class="w-full md:w-auto flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-yellow-500 text-[#1c170d] px-6 py-3.5 md:py-3 font-bold shadow-md shadow-primary/20 transition-all hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Tạo bài học mới</span>
+</button>
+</div>
+<div class="flex flex-col md:flex-row gap-4 sticky top-0 z-10 bg-white dark:bg-[#1a160c] py-2 md:static md:p-0">
+<div class="relative flex-1">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary">
+<span class="material-symbols-outlined">search</span>
+</span>
+<input class="w-full h-12 rounded-lg border border-[#e8e0ce] dark:border-gray-700 bg-background-light dark:bg-gray-800 pl-11 pr-4 text-text-main dark:text-white focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-text-secondary/70 transition-all outline-none" placeholder="Tìm kiếm bài học..." type="text"/>
+</div>
+<div class="flex gap-4">
+<div class="relative w-full md:w-56">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary">
+<span class="material-symbols-outlined">sort</span>
+</span>
+<select class="w-full h-12 appearance-none rounded-lg border border-[#e8e0ce] dark:border-gray-700 bg-background-light dark:bg-gray-800 pl-11 pr-10 text-text-main dark:text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+<option>Mới nhất</option>
+<option>Cũ nhất</option>
+<option>Trạng thái</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary pointer-events-none">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</div>
+<button class="md:hidden flex items-center justify-center h-12 w-12 rounded-lg border border-[#e8e0ce] dark:border-gray-700 bg-background-light dark:bg-gray-800 text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+<div class="group flex flex-col bg-background-light dark:bg-gray-800 rounded-xl border border-[#e8e0ce] dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+<div class="relative h-44 sm:h-40 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Colorful geometric shapes illustrating fractions" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSHy9pq_kYXpwgE6Pai5-98CA13fOc99tt22V9_HXDm0X9hlyLmt_wiO4ED9ITnLEu0os3bpp5P9esSA4t4BjEZUjLD6ShH9J0t54aV_54VcuAQvb-XotetUP6EqFUdRnqKB82sb504lw-xa6JqWpMrvujCnn207wjqVza-cz82J3VCFqjWsgZSoiq5sq1Tu7JF4Y1o6QL_sw1AhNXRdacQPeKqxXbsGdmPPrdHJXCbbXTx6cAHITiYOVZMH97oMf2zBQTVvzbuAxQ");'></div>
+<div class="absolute top-3 right-3 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold px-2.5 py-1 rounded-full border border-green-200 dark:border-green-800 flex items-center gap-1 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                    Đã xuất bản
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-3">
+<div class="flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2">Bài 1: Ôn tập về phân số</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-2 line-clamp-2">Ôn tập các kiến thức cơ bản về phân số, so sánh và các phép tính đơn giản.</p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#f4efe7] dark:border-gray-700 mt-auto">
+<div class="flex items-center gap-1.5 text-xs text-text-secondary dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                        12/09/2023
+                                    </div>
+<button class="p-1.5 -mr-1.5 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-600 text-text-main dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-background-light dark:bg-gray-800 rounded-xl border border-[#e8e0ce] dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+<div class="relative h-44 sm:h-40 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Wooden ruler and pencil on yellow background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWGKejOFwt6LLRDWk2Ntud3Fu0asc0GGpH6EihosPmecDgITinuZEdALw1GMYpCxAZvksKciazecHgkpVw9H1KnQsMItSGElanCRN4ZWI17To1MM27BQYy6UhyCykOMVIqxoAoS9ro4MKBrb3YhDmvy8c3-OP47_TbahYjERhqVBZcP-3vGG_tjHAV9LvgnQqTTTK2hRA2N3kZCEDetFbzN93Pz9RCHLETfYMA1J9z-qg_bVQmCXYd776k3FtRppJulmhISNVBqMTt");'></div>
+<div class="absolute top-3 right-3 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-2.5 py-1 rounded-full border border-gray-200 dark:border-gray-600 flex items-center gap-1 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+                                    Bản nháp
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-3">
+<div class="flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2">Bài 2: Phép cộng phân số</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-2 line-clamp-2">Hướng dẫn học sinh thực hiện phép cộng hai phân số cùng và khác mẫu số.</p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#f4efe7] dark:border-gray-700 mt-auto">
+<div class="flex items-center gap-1.5 text-xs text-text-secondary dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[16px]">edit_calendar</span>
+                                        Hôm qua
+                                    </div>
+<button class="p-1.5 -mr-1.5 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-600 text-text-main dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-background-light dark:bg-gray-800 rounded-xl border border-[#e8e0ce] dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+<div class="relative h-44 sm:h-40 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Calculator on a notebook" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGGgqUUmdPDjCwyxjkNBQM0GIqm1MmN9I3IWQUd7sYP-3X1Er1fBGdwPKEoU7uZV8IPbVLpz5m4FOnQq06FnTg-6RFTvpUmHaHvH8jZoV9HXzbNJZ_42C5yReOdDX5s4sgUp2I1lVWOmXsUgeaywIXCrcnQC__VQ4RRcOAR8AW9oqmzVliYxSAaFIVEHThM8T3zP98W864WL6U4F5frZs9xeYqgt6sgccLtURA8FLIBZFvFmNiiR0H119f86KWBQHtBANgEYwkCAQc");'></div>
+<div class="absolute top-3 right-3 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold px-2.5 py-1 rounded-full border border-green-200 dark:border-green-800 flex items-center gap-1 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                    Đã xuất bản
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-3">
+<div class="flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2">Bài 3: Hỗn số</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-2 line-clamp-2">Giới thiệu khái niệm hỗn số và cách chuyển đổi từ phân số sang hỗn số.</p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#f4efe7] dark:border-gray-700 mt-auto">
+<div class="flex items-center gap-1.5 text-xs text-text-secondary dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                        20/09/2023
+                                    </div>
+<button class="p-1.5 -mr-1.5 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-600 text-text-main dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col bg-background-light dark:bg-gray-800 rounded-xl border border-[#e8e0ce] dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+<div class="relative h-44 sm:h-40 bg-gray-100 dark:bg-gray-700 overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Close up of math text book" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDptvCI7o2GiFoad1_-kD5Yq2d5yHmoSLZrRfm3qOavcRUn8R12IVU8Oe7Hvkks9CEkVDY8-6A5S2HxAZbAsnxqgJkt62AnpPmvyyAwz-WAL9g1vFcosJgjt_0Zskhep3fYPQ2i9l8vQJZYGQpXXWBKnTVaTEmJHfRKXFT37viNDWHBk7N1Tn_bD4FQE6p1lq8vo000WqE_2PHVEbmz3jkOt4RTcP485luwUPqUdfjrrjS2GkUrbdyJcaNhsxNoTkhCb05vvWsWTsPE");'></div>
+<div class="absolute top-3 right-3 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 text-xs font-bold px-2.5 py-1 rounded-full border border-green-200 dark:border-green-800 flex items-center gap-1 backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                    Đã xuất bản
+                                </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-3">
+<div class="flex-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2">Bài 4: Đề-ca-mét vuông</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 mt-2 line-clamp-2">Làm quen với đơn vị đo diện tích mới và ứng dụng thực tế.</p>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-[#f4efe7] dark:border-gray-700 mt-auto">
+<div class="flex items-center gap-1.5 text-xs text-text-secondary dark:text-gray-500 font-medium">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                        25/09/2023
+                                    </div>
+<button class="p-1.5 -mr-1.5 rounded-lg hover:bg-[#f4efe7] dark:hover:bg-gray-600 text-text-main dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="group flex flex-col justify-center items-center bg-background-light/50 dark:bg-gray-800/50 rounded-xl border-2 border-dashed border-[#e8e0ce] dark:border-gray-700 hover:border-primary hover:bg-[#f4efe7]/50 dark:hover:bg-gray-800 transition-all duration-300 cursor-pointer h-full min-h-[300px] sm:min-h-0">
+<div class="flex flex-col items-center gap-3 text-center p-6">
+<div class="h-14 w-14 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Tạo bài học mới</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400 max-w-[200px]">Bắt đầu soạn giáo án cho bài học tiếp theo</p>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-center pb-10">
+<button class="text-sm font-medium text-text-secondary dark:text-gray-500 hover:text-primary flex items-center gap-1 transition-colors">
+                            Xem thêm bài học cũ
+                            <span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

@@ -1,384 +1,139 @@
-<html class="light" lang="vi"><head></head><body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">```html
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Bảng điều khiển Giáo viên - Lớp 5A</title>
+<title>Trang chủ - Lớp 5</title>
+
+<!-- Fonts & Tailwind -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#f4af25",
-                        "background-light": "#f8f7f5",
-                        "background-dark": "#221c10",
-                        "card-light": "#ffffff",
-                        "card-dark": "#2c241b",
-                        "border-light": "#e8e0ce",
-                        "border-dark": "#3e3424",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend", "sans-serif"],
-                        "body": ["Noto Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "2xl": "2rem",
-                        "full": "9999px"
-                    },
-                    screens: {
-                        'xs': '480px',
-                    }
-                },
-            },
-        }
-    </script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#f4af25",
+        "background-light": "#f8f7f5",
+        "background-dark": "#221c10",
+        "text-main": "#1c170d",
+        "text-secondary": "#9c8149",
+      },
+      fontFamily: { "display": ["Lexend", "sans-serif"] },
+      borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+    },
+  },
+}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d1d5db; 
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #9ca3af; 
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #4b5563; 
-        }.pb-safe {
-            padding-bottom: env(safe-area-inset-bottom, 20px);
-        }
-    </style>
+body { font-family: 'Lexend', sans-serif; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+</style>
+</head>
 
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white overflow-x-hidden transition-colors duration-200">
+<div class="flex min-h-screen w-full">
 
-<div class="flex h-screen w-full overflow-hidden">
-<aside class="w-72 hidden md:flex flex-col border-r border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark transition-colors duration-200 z-30">
-<div class="p-6 pb-2">
-<div class="flex items-center gap-3 mb-8">
-<div class="bg-primary/20 p-2 rounded-xl text-primary">
-<span class="material-symbols-outlined text-3xl">school</span>
-</div>
-<div>
-<h1 class="font-bold text-xl tracking-tight">Lớp Năm/4</h1>
-<p class="text-xs text-slate-500 dark:text-slate-400 font-normal">Cùng chia sẽ - Cùng tiến bộ</p>
-</div>
-</div>
-<div class="flex items-center gap-3 p-3 mb-6 bg-background-light dark:bg-background-dark rounded-xl border border-border-light dark:border-border-dark">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-slate-700 shadow-sm" data-alt="Portrait of a female teacher smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAypK1gHNq_zo2UY7RVtfaLIyOvEMGxjB__q_HdxxVGHqQFzmjGhtLUQd1-DO8u865HBGC3-6NSNnXyh9XoSJuLr5ESSeHoDI5MBMaqjDGXE_cl-sd0iiT6cbpEla76Wt50FFzTPMAMEKR3F3SSNqVd6AQUGIh6s2nGok_xq89SqPutiX9xGrV1pWiY5EmB99SXeTDaNS_lDO5tfCDdxWXEXo-ge6J7t8EljmPHG0fsx5f30oGVuB3LlITIyvpbjdnXLnhW-H0b8Iv1");'>
-</div>
-<div class="flex flex-col min-w-0">
-<h2 class="text-sm font-bold truncate">Thầy Lê Thành Long</h2>
-<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Giáo viên chủ nhiệm</p>
-</div>
-</div>
-</div>
-<nav class="flex-1 px-4 flex flex-col gap-2 overflow-y-auto">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white shadow-md shadow-primary/20 transition-all hover:translate-y-[-1px]" href="index.html">
-<span class="material-symbols-outlined">grid_view</span>
-<span class="font-medium text-sm">Tổng quan</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="mon-hoc.html">
-<span class="material-symbols-outlined group-hover:text-primary transition-colors">auto_stories</span>
-<span class="font-medium text-sm">Môn học</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
-<span class="material-symbols-outlined group-hover:text-primary transition-colors">groups</span>
-<span class="font-medium text-sm">Học sinh</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
-<span class="material-symbols-outlined group-hover:text-primary transition-colors">calendar_month</span>
-<span class="font-medium text-sm">Lịch biểu</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
-<span class="material-symbols-outlined group-hover:text-primary transition-colors">assignment</span>
-<span class="font-medium text-sm">Bài kiểm tra</span>
-</a>
-</nav>
-<div class="p-4 mt-auto">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
-<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
-<span class="font-medium text-sm">Cài đặt</span>
-</a>
-</div>
+<!-- Sidebar (đã đồng bộ) -->
+<aside class="hidden w-72 flex-col justify-between border-r border-[#f4efe7] dark:border-[#3a3225] bg-white dark:bg-[#1a150c] p-6 lg:flex sticky top-0 h-screen">
+  <div class="flex flex-col gap-8">
+    <div class="flex items-center gap-4">
+      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm border-2 border-primary/20"
+        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbt3HMOjphqIHq5Vr6T9bhupTpbM3Hec0CaLvgNH8AfDqE7wZ2FfLntJIUk4fZCfdUmgLno0pqzNryYQYudmrqmPPBuiFZO8XYmEKNZDn_b2DmSE6PP173ZxXANE6sQT0JKyJysETuAbl93KAOzAgP4foUQSdLjzzs98wytRnoMctaz4GA4g_iiC89uBIXakTGhqNz4gOOiL3KQ95x2hjuHfQ4HIcM5OffexEjpbXXSvjcdHCII_vA8X94VT5j71g93iScmb1W90Qd");'></div>
+      <div class="flex flex-col">
+        <h1 class="text-text-main dark:text-white text-lg font-bold leading-tight">Trường TH Đỗ Văn Nại</h1>
+        <p class="text-text-secondary dark:text-gray-400 text-sm font-normal">Năm học 2025 - 2026</p>
+      </div>
+    </div>
+
+    <nav class="flex flex-col gap-2">
+      <a href="index.html" class="nav-item">
+        <span class="material-symbols-outlined text-2xl">grid_view</span>
+        <span class="text-base font-medium">Trang chủ</span>
+      </a>
+      <a href="mon-hoc.html" class="nav-item">
+        <span class="material-symbols-outlined text-2xl">book_2</span>
+        <span class="text-base font-medium">Môn học</span>
+      </a>
+      <a href="hoc-sinh.html" class="nav-item">
+        <span class="material-symbols-outlined text-2xl">groups</span>
+        <span class="text-base font-medium">Học sinh</span>
+      </a>
+      <a href="diem-so.html" class="nav-item">
+        <span class="material-symbols-outlined text-2xl">bar_chart</span>
+        <span class="text-base font-medium">Điểm số</span>
+      </a>
+      <a href="lich-trinh.html" class="nav-item">
+        <span class="material-symbols-outlined text-2xl">calendar_month</span>
+        <span class="text-base font-medium">Lịch trình</span>
+      </a>
+    </nav>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <div class="h-px w-full bg-[#f4efe7] dark:bg-[#3a3225]"></div>
+    <a href="#" class="flex items-center gap-4 px-4 py-2 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 text-red-600 transition-colors">
+      <span class="material-symbols-outlined text-2xl">logout</span>
+      <span class="text-base font-medium">Đăng xuất</span>
+    </a>
+  </div>
 </aside>
-<main class="flex-1 flex flex-col h-full overflow-hidden relative">
-<header class="w-full px-4 md:px-6 py-3 md:py-6 flex flex-col md:flex-row gap-3 md:gap-4 justify-between items-center z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm sticky top-0 border-b border-transparent md:border-none">
-<div class="md:hidden w-full flex justify-between items-center">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-2xl">school</span>
-<span class="font-bold text-lg">Lớp 5A</span>
-</div>
-<div class="flex items-center gap-2">
-<button class="relative p-2 rounded-xl bg-white dark:bg-card-dark hover:bg-slate-50 transition-colors shadow-sm text-slate-600 dark:text-slate-300">
-<span class="material-symbols-outlined text-[20px]">notifications</span>
-<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-card-dark"></span>
-</button>
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-8 border border-border-light shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAypK1gHNq_zo2UY7RVtfaLIyOvEMGxjB__q_HdxxVGHqQFzmjGhtLUQd1-DO8u865HBGC3-6NSNnXyh9XoSJuLr5ESSeHoDI5MBMaqjDGXE_cl-sd0iiT6cbpEla76Wt50FFzTPMAMEKR3F3SSNqVd6AQUGIh6s2nGok_xq89SqPutiX9xGrV1pWiY5EmB99SXeTDaNS_lDO5tfCDdxWXEXo-ge6J7t8EljmPHG0fsx5f30oGVuB3LlITIyvpbjdnXLnhW-H0b8Iv1");'></div>
-</div>
-</div>
-<div class="w-full md:max-w-md">
-<label class="relative flex items-center w-full group">
-<span class="absolute left-4 text-slate-400 group-focus-within:text-primary transition-colors material-symbols-outlined">search</span>
-<input class="w-full py-2.5 md:py-3 pl-12 pr-4 bg-white dark:bg-card-dark border-none rounded-xl shadow-sm placeholder-slate-400 text-sm focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Tìm kiếm bài học, học sinh..." type="text"/>
-</label>
-</div>
-<div class="hidden md:flex items-center gap-3 md:gap-4 self-end md:self-auto">
-<button class="relative p-2.5 rounded-xl bg-white dark:bg-card-dark hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm text-slate-600 dark:text-slate-300">
-<span class="material-symbols-outlined text-[22px]">notifications</span>
-<span class="absolute top-2.5 right-2.5 size-2 bg-red-500 rounded-full border-2 border-white dark:border-card-dark"></span>
-</button>
-<a href="tao-bai-hoc.html" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 active:scale-95 text-text-main font-bold py-3 px-6 rounded-xl shadow-lg shadow-primary/20 transition-all duration-200 w-full sm:w-auto min-w-max">
-  <span class="material-symbols-outlined">add_circle</span>
-  <span>Tạo bài học</span>
-</a>
-</div>
+
+<main class="flex flex-1 flex-col h-screen overflow-y-auto relative">
+<header class="sticky top-0 z-20 flex items-center justify-between border-b border-[#f4efe7] dark:border-[#3a3225] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 md:px-8 py-4">
+  <div class="flex items-center gap-3 md:gap-4">
+    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2c2415] text-text-main dark:text-white">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <div class="flex items-center gap-2 text-text-secondary dark:text-gray-400">
+      <span class="material-symbols-outlined text-xl">school</span>
+      <h2 class="text-lg font-medium whitespace-nowrap">Lớp 5A</h2>
+    </div>
+  </div>
+  <div class="flex items-center gap-3 md:gap-6">
+    <div class="hidden md:flex relative group">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+        <span class="material-symbols-outlined text-text-secondary dark:text-gray-500">search</span>
+      </div>
+      <input class="block w-64 lg:w-80 rounded-xl border-none bg-white dark:bg-[#2c2415] py-2.5 pl-10 pr-4 text-sm text-text-main dark:text-white placeholder-text-secondary dark:placeholder-gray-500 focus:ring-2 focus:ring-primary shadow-sm" placeholder="Tìm kiếm nhanh..." type="text"/>
+    </div>
+    <button class="relative p-2 rounded-full hover:bg-white dark:hover:bg-[#2c2415] transition-colors">
+      <span class="material-symbols-outlined text-text-main dark:text-white">notifications</span>
+      <span class="absolute top-1.5 right-1.5 size-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
+    </button>
+    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-[#2c2415] shadow-sm cursor-pointer"
+      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVcsPEf2sMT8SoYf9Nz9SzgfjZiSgxy27fm516JG8e8EScxJjudXzi32XB6bH-9_XicLMwnJgkiUxikTahGvrt0-FmvSEFTmIvMi7gxEn_ZLUDkb7ITlqVtFRNCwzb0ark-lJVwAx751N-T7YpS1T8HLsQfQm8H1CNlc6vAeloHwZL00HOiFlLFYGgojvRd_rpXOlftXB08ZxmEcCSz7qQvq4E9XPf-5VM0Z7QM6WDNTNSTLiuv1kDbMW-NLFuq9kS-kuQ5FhFfFGd");'>
+    </div>
+  </div>
 </header>
-<div class="flex-1 overflow-y-auto px-4 md:px-6 pb-24 md:pb-10 scroll-smooth">
-<div class="max-w-6xl mx-auto flex flex-col gap-6 md:gap-8">
-<section class="flex flex-col gap-1 mt-2">
-<h1 class="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
-                        Xin chào các em! <span class="inline-block animate-pulse">👋</span>
-</h1>
-<p class="text-slate-500 dark:text-slate-400 text-sm md:text-base">Chúc các em một ngày học tập hiệu quả và tràn đầy năng lượng.</p>
+
+<!-- Nội dung trang chính -->
+<section class="flex-1 p-8">
+  <h1 class="text-3xl font-black mb-4">Trang chủ</h1>
+  <p class="text-text-secondary dark:text-gray-400">Chào mừng đến với hệ thống quản lý lớp học.</p>
 </section>
-<section class="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-<div class="flex flex-col p-5 bg-white dark:bg-card-dark rounded-2xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow group">
-<div class="flex justify-between items-start mb-4">
-<div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
-<span class="material-symbols-outlined">groups</span>
-</div>
-<span class="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-lg">+2 mới</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Tổng học sinh</p>
-<p class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-primary transition-colors">35</p>
-</div>
-<div class="flex flex-col p-5 bg-white dark:bg-card-dark rounded-2xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow group">
-<div class="flex justify-between items-start mb-4">
-<div class="p-3 rounded-xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400">
-<span class="material-symbols-outlined">import_contacts</span>
-</div>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Bài giảng đang dạy</p>
-<p class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-primary transition-colors">12</p>
-</div>
-<div class="flex flex-col p-5 bg-white dark:bg-card-dark rounded-2xl border border-border-light dark:border-border-dark shadow-sm hover:shadow-md transition-shadow group min-[500px]:col-span-2 lg:col-span-1">
-<div class="flex justify-between items-start mb-4">
-<div class="p-3 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400">
-<span class="material-symbols-outlined">assignment_turned_in</span>
-</div>
-<span class="bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 text-xs font-bold px-2 py-1 rounded-lg">Sắp tới hạn</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1">Bài kiểm tra sắp tới</p>
-<p class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-primary transition-colors">3</p>
-</div>
-</section>
-<section>
-<div class="flex justify-between items-end mb-4 md:mb-5">
-<h2 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">category</span>
-                            Môn học của tôi
-                        </h2>
-<a class="text-sm font-medium text-primary hover:underline" href="#">Xem tất cả</a>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
-<div class="bg-white dark:bg-card-dark rounded-2xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer flex flex-col h-full">
-<div class="flex justify-between items-start mb-4">
-<div class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl text-blue-600 dark:text-blue-400">
-<span class="material-symbols-outlined text-3xl">calculate</span>
-</div>
-<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Toán Học</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Chương 3: Phân số</p>
-<div class="mt-auto">
-<div class="flex justify-between text-xs font-medium mb-2">
-<span class="text-slate-500 dark:text-slate-400">Tiến độ</span>
-<span class="text-blue-600 dark:text-blue-400">75%</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
-<div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-2xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer flex flex-col h-full">
-<div class="flex justify-between items-start mb-4">
-<div class="bg-green-100 dark:bg-green-900/30 p-3 rounded-xl text-green-600 dark:text-green-400">
-<span class="material-symbols-outlined text-3xl">auto_stories</span>
-</div>
-<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Tiếng Việt</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Tập đọc: Đất nước</p>
-<div class="mt-auto">
-<div class="flex justify-between text-xs font-medium mb-2">
-<span class="text-slate-500 dark:text-slate-400">Tiến độ</span>
-<span class="text-green-600 dark:text-green-400">40%</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
-<div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-2xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer flex flex-col h-full">
-<div class="flex justify-between items-start mb-4">
-<div class="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-xl text-purple-600 dark:text-purple-400">
-<span class="material-symbols-outlined text-3xl">science</span>
-</div>
-<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Khoa Học</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Chủ đề: Thực vật và môi trường</p>
-<div class="mt-auto">
-<div class="flex justify-between text-xs font-medium mb-2">
-<span class="text-slate-500 dark:text-slate-400">Tiến độ</span>
-<span class="text-purple-600 dark:text-purple-400">60%</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
-<div class="bg-purple-500 h-2 rounded-full" style="width: 60%"></div>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-2xl p-5 border border-border-light dark:border-border-dark shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer flex flex-col h-full">
-<div class="flex justify-between items-start mb-4">
-<div class="bg-pink-100 dark:bg-pink-900/30 p-3 rounded-xl text-pink-600 dark:text-pink-400">
-<span class="material-symbols-outlined text-3xl">translate</span>
-</div>
-<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Tiếng Anh</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Unit 5: My Dream House</p>
-<div class="mt-auto">
-<div class="flex justify-between text-xs font-medium mb-2">
-<span class="text-slate-500 dark:text-slate-400">Tiến độ</span>
-<span class="text-pink-600 dark:text-pink-400">90%</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2">
-<div class="bg-pink-500 h-2 rounded-full" style="width: 90%"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<div class="lg:col-span-2 flex flex-col gap-4">
-<div class="flex justify-between items-center">
-<h2 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">schedule</span>
-                                Hoạt động gần đây
-                            </h2>
-</div>
-<div class="bg-white dark:bg-card-dark rounded-2xl border border-border-light dark:border-border-dark overflow-hidden">
-<div class="divide-y divide-border-light dark:divide-border-dark">
-<div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors flex items-center gap-4">
-<div class="bg-green-100 dark:bg-green-900/20 p-2 rounded-lg text-green-600 dark:text-green-400 flex-shrink-0">
-<span class="material-symbols-outlined">edit_document</span>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 truncate">Đã cập nhật bài giảng "Tập làm văn"</h4>
-<p class="text-xs text-slate-500 dark:text-slate-400">Tiếng Việt • Lớp 5A</p>
-</div>
-<span class="text-xs text-slate-400 whitespace-nowrap">2 giờ trước</span>
-</div>
-<div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors flex items-center gap-4">
-<div class="bg-blue-100 dark:bg-blue-900/20 p-2 rounded-lg text-blue-600 dark:text-blue-400 flex-shrink-0">
-<span class="material-symbols-outlined">add_task</span>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 truncate">Giao bài tập về nhà mới</h4>
-<p class="text-xs text-slate-500 dark:text-slate-400">Toán • Trang 45 SGK</p>
-</div>
-<span class="text-xs text-slate-400 whitespace-nowrap">5 giờ trước</span>
-</div>
-<div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors flex items-center gap-4">
-<div class="bg-yellow-100 dark:bg-yellow-900/20 p-2 rounded-lg text-yellow-600 dark:text-yellow-400 flex-shrink-0">
-<span class="material-symbols-outlined">star</span>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 truncate">Đánh giá hạnh kiểm tuần</h4>
-<p class="text-xs text-slate-500 dark:text-slate-400">Tổng hợp • Tuần 12</p>
-</div>
-<span class="text-xs text-slate-400 whitespace-nowrap">Hôm qua</span>
-</div>
-</div>
-<div class="p-3 bg-slate-50 dark:bg-slate-800/30 text-center">
-<a class="text-sm font-medium text-slate-500 hover:text-primary transition-colors" href="#">Xem tất cả hoạt động</a>
-</div>
-</div>
-</div>
-<div class="flex flex-col gap-4">
-<h2 class="text-lg md:text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">campaign</span>
-                            Thông báo
-                        </h2>
-<div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-5 border border-primary/20 flex flex-col gap-4">
-<div class="flex gap-3 items-start">
-<span class="size-2 mt-2 bg-red-500 rounded-full flex-shrink-0"></span>
-<div>
-<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Họp phụ huynh học sinh</h4>
-<p class="text-xs text-slate-600 dark:text-slate-400 mt-1 line-clamp-2">Cuộc họp định kỳ đầu năm học sẽ diễn ra vào 14h00 Thứ Sáu tuần này tại phòng họp A2.</p>
-<p class="text-[10px] font-bold text-primary mt-2 uppercase tracking-wide">Thứ 6, 14:00 PM</p>
-</div>
-</div>
-<div class="h-px bg-primary/20 w-full"></div>
-<div class="flex gap-3 items-start">
-<span class="size-2 mt-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-<div>
-<h4 class="text-sm font-bold text-slate-900 dark:text-slate-100">Nộp điểm thi giữa kỳ</h4>
-<p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Hạn chót nhập điểm lên hệ thống nhà trường.</p>
-<p class="text-[10px] font-bold text-primary mt-2 uppercase tracking-wide">Hạn chót: 20/11</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<button class="md:hidden fixed right-4 bottom-24 z-40 p-4 bg-primary text-white rounded-2xl shadow-lg shadow-primary/30 hover:scale-105 active:scale-95 transition-all">
-<span class="material-symbols-outlined text-2xl">add</span>
-</button>
 </main>
 </div>
-<nav class="md:hidden fixed bottom-0 w-full bg-white dark:bg-card-dark border-t border-border-light dark:border-border-dark flex justify-between items-center px-6 py-2 pb-safe z-50">
-<a class="flex flex-col items-center gap-1 text-primary p-2" href="#">
-<span class="material-symbols-outlined">grid_view</span>
-<span class="text-[10px] font-bold">Tổng quan</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-2" href="#">
-<span class="material-symbols-outlined">auto_stories</span>
-<span class="text-[10px] font-medium">Môn học</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-2" href="#">
-<span class="material-symbols-outlined">groups</span>
-<span class="text-[10px] font-medium">Học sinh</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-2" href="#">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="text-[10px] font-medium">Lịch</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-2" href="#">
-<span class="material-symbols-outlined">menu</span>
-<span class="text-[10px] font-medium">Menu</span>
-</a>
-</nav>
-</body></html>
+
+<!-- Active menu -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const path = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".nav-item").forEach(link => {
+    const icon = link.querySelector(".material-symbols-outlined");
+    if (link.getAttribute("href") === path) {
+      link.classList.add("bg-primary/10", "dark:bg-primary/20", "font-bold", "text-text-main", "dark:text-primary");
+      icon.classList.add("fill", "text-primary");
+    } else {
+      link.classList.add("text-text-main", "dark:text-gray-200", "hover:bg-gray-50", "dark:hover:bg-[#2c2415]");
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,212 +1,92 @@
 <!DOCTYPE html>
-<html class="light" lang="vi">
+<html lang="vi">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Môn Toán - Lớp 5/4</title>
+  <meta charset="UTF-8">
+  <title>Môn Toán lớp 5 – Lớp 5/4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts & Tailwind -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "#f4af25",
-        "background-light": "#f8f7f5",
-        "background-dark": "#221c10",
-        "text-main": "#1c170d",
-        "text-secondary": "#9c8149",
-      },
-      fontFamily: {
-        display: ["Lexend", "sans-serif"]
-      },
-      borderRadius: {
-        DEFAULT: "0.5rem",
-        lg: "1rem",
-        xl: "1.5rem",
-        full: "9999px"
-      }
-    }
-  }
-}
-</script>
-
-<style>
-body { font-family: 'Lexend', sans-serif; }
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-.material-symbols-outlined.fill {
-  font-variation-settings: 'FILL' 1;
-}
-</style>
+  <style>
+    body { font-family: system-ui, sans-serif; }
+  </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white overflow-x-hidden transition-colors duration-200">
-
-<div class="flex min-h-screen w-full">
-
-<!-- Overlay mobile -->
-<div id="sidebar-overlay" class="fixed inset-0 z-40 bg-black/40 hidden lg:hidden"></div>
-
-<!-- SIDEBAR -->
-<aside id="sidebar"
-  class="fixed lg:sticky top-0 left-0 z-50 hidden lg:flex w-72 h-screen flex-col justify-between
-         border-r border-[#f4efe7] dark:border-[#3a3225]
-         bg-white dark:bg-[#1a150c] p-6">
-
-  <div class="flex flex-col gap-8">
-    <div class="flex items-center gap-4">
-      <div class="bg-center bg-cover rounded-full size-12 border-2 border-primary/20"
-        style='background-image:url("https://via.placeholder.com/100")'></div>
-      <div>
-        <h1 class="font-bold text-lg">TH Đỗ Văn Nại</h1>
-        <p class="text-sm text-text-secondary">GVCN: Lê Thành Long</p>
-      </div>
-    </div>
-
-    <nav class="flex flex-col gap-2">
-      <a href="index.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
-        <span class="material-symbols-outlined">grid_view</span> Trang chủ
-      </a>
-      <a href="mon-hoc.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
-        <span class="material-symbols-outlined">book</span> Môn học
-      </a>
-      <a href="mon-toan.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl bg-primary/20 font-bold">
-        <span class="material-symbols-outlined fill">calculate</span> Toán học
-      </a>
-    </nav>
-  </div>
-
-  <div class="border-t pt-4 text-sm text-text-secondary">
-    Năm học 2025 – 2026
-  </div>
-</aside>
-
-<!-- MAIN -->
-<div class="flex flex-1 flex-col h-screen overflow-y-auto">
+<body class="bg-slate-100 min-h-screen">
 
 <!-- HEADER -->
-<header class="sticky top-0 z-20 flex items-center justify-between px-4 md:px-8 py-4
-border-b border-[#f4efe7] dark:border-[#3a3225]
-bg-background-light/80 dark:bg-background-dark/80 backdrop-blur">
-
-  <div class="flex items-center gap-3">
-    <button id="btn-open-sidebar"
-      class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2c2415]">
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-    <h2 class="text-lg font-medium">Lớp 5/4</h2>
+<header class="bg-yellow-400 text-slate-900 shadow">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <h1 class="text-2xl font-black">📘 MÔN TOÁN – LỚP 5/4</h1>
+    <p class="text-sm">Trường Tiểu học Đỗ Văn Nại – GV: Lê Thành Long</p>
   </div>
-
 </header>
 
-<!-- CONTENT -->
-<main class="flex-1 px-4 md:px-8 lg:px-12 py-6 md:py-8 max-w-[1400px] mx-auto w-full space-y-8">
+<!-- MAIN -->
+<main class="max-w-6xl mx-auto px-4 py-6">
 
-<!-- TITLE -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b pb-6">
-  <div class="flex items-center gap-4">
-    <div class="h-16 w-16 rounded-2xl bg-primary/15 flex items-center justify-center text-primary">
-      <span class="material-symbols-outlined fill text-4xl">calculate</span>
-    </div>
-    <div>
-      <h1 class="text-3xl md:text-4xl font-black">Môn Toán – Lớp 5</h1>
-      <p class="text-text-secondary">Danh sách bài học và trò chơi Toán</p>
-    </div>
+  <h2 class="text-xl font-bold mb-4">Danh sách bài học</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <!-- ===== MẪU 1 BÀI ===== -->
+    <!-- Chỉ cần copy khối này và đổi số tiết + tên bài -->
+
+    <a href="bai-hoc-toan-tiet-1.html"
+       class="block bg-white rounded-xl p-4 shadow hover:shadow-lg hover:-translate-y-1 transition">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Tiết 1</span>
+        <span class="text-xs text-gray-400">Tuần 1</span>
+      </div>
+      <h3 class="font-bold text-gray-900">
+        Bài 1. Ôn tập số tự nhiên (tiết 1)
+      </h3>
+    </a>
+
+    <a href="bai-hoc-toan-tiet-2.html"
+       class="block bg-white rounded-xl p-4 shadow hover:shadow-lg hover:-translate-y-1 transition">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Tiết 2</span>
+        <span class="text-xs text-gray-400">Tuần 1</span>
+      </div>
+      <h3 class="font-bold text-gray-900">
+        Bài 1. Ôn tập số tự nhiên (tiết 2)
+      </h3>
+    </a>
+
+    <a href="bai-hoc-toan-tiet-3.html"
+       class="block bg-white rounded-xl p-4 shadow hover:shadow-lg hover:-translate-y-1 transition">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Tiết 3</span>
+        <span class="text-xs text-gray-400">Tuần 1</span>
+      </div>
+      <h3 class="font-bold text-gray-900">
+        Bài 2. Ôn tập các phép tính với số tự nhiên (tiết 1)
+      </h3>
+    </a>
+
+    <a href="bai-hoc-toan-tiet-4.html"
+       class="block bg-white rounded-xl p-4 shadow hover:shadow-lg hover:-translate-y-1 transition">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Tiết 4</span>
+        <span class="text-xs text-gray-400">Tuần 1</span>
+      </div>
+      <h3 class="font-bold text-gray-900">
+        Bài 2. Ôn tập các phép tính với số tự nhiên (tiết 2)
+      </h3>
+    </a>
+
+    <!-- 👉 CỨ TIẾP TỤC THÊM CHO ĐẾN HẾT CHƯƠNG TRÌNH -->
+
   </div>
-
-  <a href="tao-bai-hoc.html"
-     class="bg-primary hover:bg-primary/90 text-text-main font-bold py-3 px-6 rounded-xl shadow-lg shadow-primary/20 flex items-center gap-2">
-    <span class="material-symbols-outlined">add_circle</span>
-    Tạo bài học
-  </a>
-</div>
-
-<!-- SEARCH -->
-<div class="flex flex-col md:flex-row gap-4">
-  <input
-    class="h-12 flex-1 rounded-lg border px-4 bg-background-light dark:bg-[#2c2415]
-           focus:ring-2 focus:ring-primary outline-none"
-    placeholder="Tìm kiếm bài học Toán..."
-  />
-</div>
-
-<!-- GRID BÀI HỌC -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-<!-- CARD -->
-<div class="group bg-white dark:bg-[#1a150c] rounded-xl border overflow-hidden hover:shadow-xl transition">
-  <div class="h-40 bg-cover bg-center"
-    style='background-image:url("https://images.unsplash.com/photo-1581090700227-1e37b190418e")'></div>
-  <div class="p-4 space-y-2">
-    <h3 class="font-bold group-hover:text-primary transition">
-      Bài 1: Ôn tập về phân số
-    </h3>
-    <p class="text-sm text-text-secondary line-clamp-2">
-      Ôn tập kiến thức cơ bản về phân số và so sánh phân số.
-    </p>
-    <div class="text-xs text-text-secondary flex justify-between pt-2 border-t">
-      <span>12/09/2025</span>
-      <span class="text-green-600 font-bold">Đã xuất bản</span>
-    </div>
-  </div>
-</div>
-
-<!-- CARD -->
-<div class="group bg-white dark:bg-[#1a150c] rounded-xl border overflow-hidden hover:shadow-xl transition">
-  <div class="h-40 bg-cover bg-center"
-    style='background-image:url("https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9")'></div>
-  <div class="p-4 space-y-2">
-    <h3 class="font-bold group-hover:text-primary transition">
-      Bài 2: Phép cộng phân số
-    </h3>
-    <p class="text-sm text-text-secondary line-clamp-2">
-      Cộng phân số cùng mẫu và khác mẫu số.
-    </p>
-    <div class="text-xs text-text-secondary flex justify-between pt-2 border-t">
-      <span>Đang soạn</span>
-      <span class="font-bold">Bản nháp</span>
-    </div>
-  </div>
-</div>
-
-<!-- ADD -->
-<div class="flex items-center justify-center rounded-xl border-2 border-dashed hover:border-primary hover:bg-primary/5 transition cursor-pointer">
-  <div class="p-10 text-center space-y-2">
-    <span class="material-symbols-outlined text-5xl text-primary">add</span>
-    <p class="font-bold">Tạo bài học mới</p>
-  </div>
-</div>
-
-</div>
 
 </main>
-</div>
-</div>
 
-<!-- SCRIPT -->
-<script>
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("sidebar-overlay");
-const btn = document.getElementById("btn-open-sidebar");
-
-btn.onclick = () => {
-  sidebar.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-overlay.onclick = () => {
-  sidebar.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
-</script>
+<!-- FOOTER -->
+<footer class="text-center text-xs text-gray-500 py-6">
+  © 2025 – Website lớp 5/4 – Toán học
+</footer>
 
 </body>
 </html>

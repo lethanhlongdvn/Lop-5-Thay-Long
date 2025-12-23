@@ -1,281 +1,188 @@
 <!DOCTYPE html>
-<html class="light" lang="vi"><head>
+<html class="light" lang="vi">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Quản lý Môn học - Lớp 5</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Môn học - Lớp 5/4</title>
+
+<!-- Fonts & Tailwind -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#f4af25",
-                        "background-light": "#f8f7f5",
-                        "background-dark": "#221c10",
-                        "text-main": "#1c170d",
-                        "text-secondary": "#9c8149",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#f4af25",
+        "background-light": "#f8f7f5",
+        "background-dark": "#221c10",
+        "text-main": "#1c170d",
+        "text-secondary": "#9c8149",
+      },
+      fontFamily: { display: ["Lexend", "sans-serif"] },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "1rem",
+        xl: "1.5rem",
+        full: "9999px"
+      }
+    }
+  }
+}
+</script>
+
 <style>
-        body {
-            font-family: 'Lexend', sans-serif;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .material-symbols-outlined.fill {
-            font-variation-settings: 'FILL' 1;
-        }
-    </style>
+body { font-family: 'Lexend', sans-serif; }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1;
+}
+</style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white overflow-x-hidden transition-colors duration-200">
+
 <div class="flex min-h-screen w-full">
-<aside class="hidden w-72 flex-col justify-between border-r border-[#f4efe7] dark:border-[#3a3225] bg-white dark:bg-[#1a150c] p-6 lg:flex sticky top-0 h-screen">
-<div class="flex flex-col gap-8">
-<div class="flex items-center gap-4">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm border-2 border-primary/20" data-alt="School logo with abstract education symbol" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbt3HMOjphqIHq5Vr6T9bhupTpbM3Hec0CaLvgNH8AfDqE7wZ2FfLntJIUk4fZCfdUmgLno0pqzNryYQYudmrqmPPBuiFZO8XYmEKNZDn_b2DmSE6PP173ZxXANE6sQT0JKyJysETuAbl93KAOzAgP4foUQSdLjzzs98wytRnoMctaz4GA4g_iiC89uBIXakTGhqNz4gOOiL3KQ95x2hjuHfQ4HIcM5OffexEjpbXXSvjcdHCII_vA8X94VT5j71g93iScmb1W90Qd");'>
-</div>
-<div class="flex flex-col">
-<h1 class="text-text-main dark:text-white text-lg font-bold leading-tight">Trường TH Đỗ Văn Nại</h1>
-<p class="text-text-secondary dark:text-gray-400 text-sm font-normal">Năm học 2025 - 2026</p>
-</div>
-</div>
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-[#2c2415] text-text-main dark:text-gray-200 transition-colors" href="index.html">
-<span class="material-symbols-outlined text-2xl">grid_view</span>
-<span class="text-base font-medium">Trang chủ</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary/10 dark:bg-primary/20 text-text-main dark:text-primary font-bold transition-colors" href="mon-hoc.html">
-<span class="material-symbols-outlined fill text-primary text-2xl">book_2</span>
-<span class="text-base">Môn học</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-[#2c2415] text-text-main dark:text-gray-200 transition-colors" href="#">
-<span class="material-symbols-outlined text-2xl">groups</span>
-<span class="text-base font-medium">Học sinh</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-[#2c2415] text-text-main dark:text-gray-200 transition-colors" href="#">
-<span class="material-symbols-outlined text-2xl">bar_chart</span>
-<span class="text-base font-medium">Điểm số</span>
-</a>
-<a class="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-[#2c2415] text-text-main dark:text-gray-200 transition-colors" href="#">
-<span class="material-symbols-outlined text-2xl">calendar_month</span>
-<span class="text-base font-medium">Lịch trình</span>
-</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<div class="h-px w-full bg-[#f4efe7] dark:bg-[#3a3225]"></div>
-<a class="flex items-center gap-4 px-4 py-2 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 text-red-600 transition-colors" href="#">
-<span class="material-symbols-outlined text-2xl">logout</span>
-<span class="text-base font-medium">Đăng xuất</span>
-</a>
-</div>
-</aside>
-<main class="flex flex-1 flex-col h-screen overflow-y-auto relative">
-<header class="sticky top-0 z-20 flex items-center justify-between border-b border-[#f4efe7] dark:border-[#3a3225] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 md:px-8 py-4">
-<div class="flex items-center gap-3 md:gap-4">
-<button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2c2415] text-text-main dark:text-white">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<div class="flex items-center gap-2 text-text-secondary dark:text-gray-400">
-<span class="material-symbols-outlined text-xl">school</span>
-<h2 class="text-lg font-medium whitespace-nowrap">Lớp 5A</h2>
-</div>
-</div>
-<div class="flex items-center gap-3 md:gap-6">
-<div class="hidden md:flex relative group">
-<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-<span class="material-symbols-outlined text-text-secondary dark:text-gray-500">search</span>
-</div>
-<input class="block w-64 lg:w-80 rounded-xl border-none bg-white dark:bg-[#2c2415] py-2.5 pl-10 pr-4 text-sm text-text-main dark:text-white placeholder-text-secondary dark:placeholder-gray-500 focus:ring-2 focus:ring-primary shadow-sm" placeholder="Tìm kiếm nhanh..." type="text"/>
-</div>
-<button class="relative p-2 rounded-full hover:bg-white dark:hover:bg-[#2c2415] transition-colors">
-<span class="material-symbols-outlined text-text-main dark:text-white">notifications</span>
-<span class="absolute top-1.5 right-1.5 size-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-[#2c2415] shadow-sm cursor-pointer" data-alt="Profile picture of the teacher" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVcsPEf2sMT8SoYf9Nz9SzgfjZiSgxy27fm516JG8e8EScxJjudXzi32XB6bH-9_XicLMwnJgkiUxikTahGvrt0-FmvSEFTmIvMi7gxEn_ZLUDkb7ITlqVtFRNCwzb0ark-lJVwAx751N-T7YpS1T8HLsQfQm8H1CNlc6vAeloHwZL00HOiFlLFYGgojvRd_rpXOlftXB08ZxmEcCSz7qQvq4E9XPf-5VM0Z7QM6WDNTNSTLiuv1kDbMW-NLFuq9kS-kuQ5FhFfFGd");'>
-</div>
-</div>
-</header>
-<div class="flex flex-1 flex-col px-4 md:px-8 lg:px-12 py-6 md:py-8 max-w-[1400px] mx-auto w-full">
-<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 md:mb-10">
-<div class="flex flex-col gap-2">
-<h1 class="text-text-main dark:text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight">Quản lý Môn học</h1>
-<p class="text-text-secondary dark:text-gray-400 text-sm md:text-base font-normal max-w-2xl">
-                    Danh sách các môn học trong chương trình giảng dạy lớp 5. Thêm mới, cập nhật nội dung và theo dõi tiến độ.
-                </p>
-</div>
-<button class="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 active:scale-95 text-text-main font-bold py-3 px-6 rounded-xl shadow-lg shadow-primary/20 transition-all duration-200 w-full sm:w-auto min-w-max">
-<span class="material-symbols-outlined">add_circle</span>
-<span>Thêm môn học mới</span>
-</button>
-</div>
-<div class="mb-8 p-1">
-<div class="flex flex-col sm:flex-row gap-4">
-<div class="relative flex-1">
-<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-<span class="material-symbols-outlined text-text-secondary dark:text-gray-500 text-[24px]">search</span>
-</div>
-<input class="block w-full h-12 md:h-14 rounded-xl border-none bg-white dark:bg-[#1a150c] pl-12 pr-4 text-base text-text-main dark:text-white placeholder-text-secondary dark:placeholder-gray-500 focus:ring-2 focus:ring-primary shadow-sm" placeholder="Tìm kiếm môn học theo tên..." type="text"/>
-</div>
-<div class="flex gap-2 w-full sm:w-auto">
-<select class="h-12 md:h-14 flex-1 sm:flex-none w-full sm:w-auto rounded-xl border-none bg-white dark:bg-[#1a150c] px-4 pr-10 text-base text-text-main dark:text-white focus:ring-2 focus:ring-primary shadow-sm min-w-[160px] cursor-pointer">
-<option>Tất cả</option>
-<option>Môn Chính</option>
-<option>Môn Phụ</option>
-<option>Ngoại khóa</option>
-</select>
-<button class="h-12 md:h-14 w-12 md:w-14 flex-none flex items-center justify-center rounded-xl bg-white dark:bg-[#1a150c] text-text-secondary dark:text-gray-400 hover:text-primary focus:ring-2 focus:ring-primary shadow-sm transition-colors">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-</div>
-</div>
-</div>
-<a href="mon-toan.html" class="group flex flex-col bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary/20">
-  <div class="flex items-start justify-between mb-4">
-    <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-2xl">
-      <div class="size-12 bg-center bg-contain bg-no-repeat"
-        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIQcUr3OUda77qIc-XCLlcQ6AIBvyd6DTZHrwyOnUtVpzxZ9Y3YFTFb7Bt73_kp_Bmx4mNgs0YURzMewPbOIWaNoo7FP-YQoqS5unwCxkjvvmsTrSLmSMGt_rXFSkha5yLI2caSVkU2zK-a_CAjMNz0yfwS9eZ_hPZdHWFoSx-7YbNo-_OOSegEJcM5N_fY6uL2KVbFYUKFBS-r3g2EdA8pfosWzNuF71ISR14MM70DMsLfm1owgzSbB-7BWb5hPPBIw-iBxNcAdq4");'>
+
+<!-- Overlay mobile -->
+<div id="sidebar-overlay" class="fixed inset-0 z-40 bg-black/40 hidden lg:hidden"></div>
+
+<!-- SIDEBAR -->
+<aside id="sidebar"
+  class="fixed lg:sticky top-0 left-0 z-50 hidden lg:flex w-72 h-screen flex-col justify-between
+         border-r border-[#f4efe7] dark:border-[#3a3225]
+         bg-white dark:bg-[#1a150c] p-6">
+
+  <div class="flex flex-col gap-8">
+    <div class="flex items-center gap-4">
+      <div class="bg-center bg-cover rounded-full size-12 border-2 border-primary/20"
+        style='background-image:url("https://via.placeholder.com/100")'></div>
+      <div>
+        <h1 class="font-bold text-lg">TH Đỗ Văn Nại</h1>
+        <p class="text-sm text-text-secondary">GVCN: Lê Thành Long</p>
       </div>
     </div>
-    <div
-      class="px-3 py-1 rounded-full bg-background-light dark:bg-[#2c2415] text-xs font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-wide">
-      35 Bài học
+
+    <nav class="flex flex-col gap-2">
+      <a href="index.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">grid_view</span> Trang chủ
+      </a>
+      <a href="mon-hoc.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined fill">book</span> Môn học
+      </a>
+      <a href="hoc-sinh.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">groups</span> Học sinh
+      </a>
+      <a href="diem-so.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">emoji_events</span> Điểm số
+      </a>
+    </nav>
+  </div>
+
+  <div class="border-t pt-4 text-sm text-text-secondary">
+    Năm học 2025 – 2026
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="flex flex-1 flex-col h-screen overflow-y-auto">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 md:px-8 py-4
+border-b border-[#f4efe7] dark:border-[#3a3225]
+bg-background-light/80 dark:bg-background-dark/80 backdrop-blur">
+
+  <div class="flex items-center gap-3">
+    <button id="btn-open-sidebar"
+      class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2c2415]">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <h2 class="text-lg font-medium">Lớp 5/4</h2>
+  </div>
+
+</header>
+
+<!-- CONTENT -->
+<main class="flex-1 px-4 md:px-8 lg:px-12 py-6 md:py-8 max-w-[1400px] mx-auto w-full">
+
+  <!-- PAGE HEADER -->
+  <div class="mb-10">
+    <h1 class="text-3xl lg:text-4xl font-black mb-2">Môn học</h1>
+    <p class="text-text-secondary">
+      Danh sách các môn học và nội dung giảng dạy lớp 5/4
+    </p>
+  </div>
+
+  <!-- GRID MÔN HỌC -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- TOÁN -->
+    <a href="mon-toan.html"
+      class="group bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm
+             hover:shadow-xl hover:-translate-y-1 transition-all border">
+      <h3 class="text-xl font-bold mb-2">Toán học</h3>
+      <p class="text-sm text-text-secondary mb-4">
+        Phân số, số thập phân, hình học, giải toán có lời văn.
+      </p>
+      <span class="inline-flex items-center gap-2 text-primary font-semibold">
+        <span class="material-symbols-outlined">open_in_new</span>
+        Xem chi tiết
+      </span>
+    </a>
+
+    <!-- TIẾNG VIỆT -->
+    <div class="bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm border">
+      <h3 class="text-xl font-bold mb-2">Tiếng Việt</h3>
+      <p class="text-sm text-text-secondary">
+        Tập đọc, Chính tả, Luyện từ và câu, Tập làm văn.
+      </p>
     </div>
+
+    <!-- KHOA HỌC -->
+    <div class="bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm border">
+      <h3 class="text-xl font-bold mb-2">Khoa học</h3>
+      <p class="text-sm text-text-secondary">
+        Con người, vật chất, năng lượng, môi trường sống.
+      </p>
+    </div>
+
   </div>
 
-  <h3 class="text-xl font-bold text-text-main dark:text-white mb-2">Toán học</h3>
-  <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2 mb-6 flex-1">
-    Các phép tính cơ bản, phân số, số thập phân và hình học cơ bản.
-  </p>
-
-  <div class="flex gap-3 pt-4 border-t border-[#f4efe7] dark:border-[#3a3225]">
-    <span
-      class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary/10 text-text-main font-semibold transition-all duration-200">
-      <span class="material-symbols-outlined text-[20px]">open_in_new</span>
-      <span class="text-sm">Xem chi tiết</span>
-    </span>
-  </div>
-</a>
-
-<div class="group flex flex-col bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary/20">
-<div class="flex items-start justify-between mb-4">
-<div class="bg-red-50 dark:bg-red-900/20 p-3 rounded-2xl">
-<div class="size-12 bg-center bg-contain bg-no-repeat" data-alt="Vietnamese literature icon showing a book and a feather pen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTggXbcevTzdugd9c5aBTc3-jwM-7DH28Vqo5Gn7kjZ0ShEPtsyt3aY8DzTyQXP72Jm8bkxZ64cXvbXqGEvVmk4OZcYKUDB41b0dUfWdNkVw_uIGzVjpCraqmGGZ06qGT-De2PJBg9hlrWWa1sYizP_zjhtSmQM46SuYdtaUGQ8Ks7G5O6ZZp0TS0EfGk0ke1p2gJZmSMq1N22xhkIOZ22oSwv2wSrfmk0iX0Kcz6E6201OehqTJkhQxNkz9hkAoOOJSYIOC4M9rEO");'></div>
-</div>
-<div class="px-3 py-1 rounded-full bg-background-light dark:bg-[#2c2415] text-xs font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-wide">
-                        42 Bài học
-                    </div>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white mb-2">Tiếng Việt</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2 mb-6 flex-1">
-                    Tập đọc, Chính tả, Luyện từ và câu, Tập làm văn.
-                </p>
-<div class="flex gap-3 pt-4 border-t border-[#f4efe7] dark:border-[#3a3225]">
-<button class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary/10 hover:bg-primary text-text-main font-semibold transition-all duration-200">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-<span class="text-sm">Chỉnh sửa</span>
-</button>
-<button class="size-10 flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-500 hover:text-red-700 transition-colors" title="Xóa">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary/20">
-<div class="flex items-start justify-between mb-4">
-<div class="bg-green-50 dark:bg-green-900/20 p-3 rounded-2xl">
-<div class="size-12 bg-center bg-contain bg-no-repeat" data-alt="Science icon showing a microscope and leaves" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrfAX8H_b6r-qK7uFkaQhB1echuIMwHH1a20h8Hkosh_ZtIx_ZQO0Dv805Umy0q4g5BrlINfOvIv6aH8lwkqapsEWcg7ofP3LXN_vtkVEM33EZodQb6Kfwj3NwbJ36PEqK273DI4zaD2WrRe8OGLrWcukvhujfI64Y81PSz4R6GSITSUenQdWWVuSQwopcvFq6JwoYmgwg-QYq5Hsf6vkZsK5YpTOq-QmGJGXBc-MSEy4TZutWIFBBk87gai0yBjRanb7ZQh3IXIj-");'></div>
-</div>
-<div class="px-3 py-1 rounded-full bg-background-light dark:bg-[#2c2415] text-xs font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-wide">
-                        18 Bài học
-                    </div>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white mb-2">Khoa học</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2 mb-6 flex-1">
-                    Con người và sức khỏe, Vật chất và năng lượng, Thực vật và động vật.
-                </p>
-<div class="flex gap-3 pt-4 border-t border-[#f4efe7] dark:border-[#3a3225]">
-<button class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary/10 hover:bg-primary text-text-main font-semibold transition-all duration-200">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-<span class="text-sm">Chỉnh sửa</span>
-</button>
-<button class="size-10 flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-500 hover:text-red-700 transition-colors" title="Xóa">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary/20">
-<div class="flex items-start justify-between mb-4">
-<div class="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-2xl">
-<div class="size-12 bg-center bg-contain bg-no-repeat" data-alt="History and Geography icon showing a globe and a compass" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmYc9Pc6jV4VAnqENLHA2uPMirpKbIBOLMPuqxHJ2yS4XT1-_YQq30D1aj3xRt_WX6oDAf0s_ikCU8bCmWh-mpogjKIJMZTSYVEmKElN3vgfgeNbbD77v9L1aqUpdYsAV2ydPYAW8-LfSvTovIKxdXXHxMWwkJJa_gJs6knagtU6c-iOokDVAT6yOq8LJsKI1bOl2ois_fm3CyQPeJDnl6A32mDXMmucyu2WeeHKlZY1Sl7OT1wLupohBAqgOAsrWTTvBanL8joT8n");'></div>
-</div>
-<div class="px-3 py-1 rounded-full bg-background-light dark:bg-[#2c2415] text-xs font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-wide">
-                        20 Bài học
-                    </div>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white mb-2">Lịch sử &amp; Địa lý</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2 mb-6 flex-1">
-                    Lịch sử dựng nước và giữ nước, Địa lý Việt Nam và thế giới.
-                </p>
-<div class="flex gap-3 pt-4 border-t border-[#f4efe7] dark:border-[#3a3225]">
-<button class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary/10 hover:bg-primary text-text-main font-semibold transition-all duration-200">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-<span class="text-sm">Chỉnh sửa</span>
-</button>
-<button class="size-10 flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-500 hover:text-red-700 transition-colors" title="Xóa">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<div class="group flex flex-col bg-white dark:bg-[#1a150c] rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-primary/20">
-<div class="flex items-start justify-between mb-4">
-<div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-2xl">
-<div class="size-12 bg-center bg-contain bg-no-repeat" data-alt="Computer icon representing Informatics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4yDOcdY_TuLPf6C-LPm27qGyp_g3ru1Kvn8Y7pfylIsUOopjqEXsiRiktCsMTXyQ9W7LN2YbyzwdgW3BwXVKdOm1JNjihVbo2uD-IzXg0Q6i9gUo5DiSaq4PUo9xypXYWOXUbmad6TDh6p3stpyItFWkAEhOVg-Tqu5ve-DypqujJP0ueNnUy18L1yicQkqoBDyjG4s4Ml0s4lLxXgUp1goM8Xau8EHmRmaY3-GL7vCEnSvhH9v9psq5mdI5q2DF14v4zgHSPSJ4I");'></div>
-</div>
-<div class="px-3 py-1 rounded-full bg-background-light dark:bg-[#2c2415] text-xs font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-wide">
-                        15 Bài học
-                    </div>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white mb-2">Tin học</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2 mb-6 flex-1">
-                    Làm quen với máy tính, Soạn thảo văn bản, Vẽ tranh trên máy tính.
-                </p>
-<div class="flex gap-3 pt-4 border-t border-[#f4efe7] dark:border-[#3a3225]">
-<button class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-primary/10 hover:bg-primary text-text-main font-semibold transition-all duration-200">
-<span class="material-symbols-outlined text-[20px]">edit</span>
-<span class="text-sm">Chỉnh sửa</span>
-</button>
-<button class="size-10 flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/10 hover:bg-red-100 dark:hover:bg-red-900/30 text-red-500 hover:text-red-700 transition-colors" title="Xóa">
-<span class="material-symbols-outlined text-[20px]">delete</span>
-</button>
-</div>
-</div>
-<button class="group flex flex-col items-center justify-center bg-transparent border-2 border-dashed border-primary/40 hover:border-primary rounded-2xl p-5 min-h-[200px] transition-colors duration-300 cursor-pointer">
-<div class="flex items-center justify-center size-16 rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
-<span class="material-symbols-outlined text-[32px]">add</span>
-</div>
-<h3 class="mt-4 text-lg font-bold text-text-secondary dark:text-gray-400 group-hover:text-primary transition-colors">Thêm môn học mới</h3>
-</button>
-</div>
-</div>
 </main>
 </div>
+</div>
 
-</body></html>
+<!-- SCRIPT -->
+<script>
+// active menu
+document.querySelectorAll(".nav-item").forEach(link => {
+  if (link.getAttribute("href") === "mon-hoc.html") {
+    link.classList.add("bg-primary/20", "font-bold");
+    link.querySelector("span").classList.add("fill");
+  }
+});
+
+// mobile sidebar
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("sidebar-overlay");
+const btn = document.getElementById("btn-open-sidebar");
+
+btn.onclick = () => {
+  sidebar.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+overlay.onclick = () => {
+  sidebar.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+</script>
+
+</body>
+</html>

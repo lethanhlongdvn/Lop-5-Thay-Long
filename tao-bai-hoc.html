@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<title>Tạo bài học - Lớp 5/4</title>
+<title>Tạo bài học</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -13,11 +13,9 @@
 
 <h1 class="text-3xl font-black">✍️ TẠO BÀI HỌC</h1>
 
-<!-- TIÊU ĐỀ -->
 <input id="title" placeholder="Nhập tiêu đề bài học..."
  class="w-full p-3 text-xl font-bold rounded-lg border">
 
-<!-- THANH CÔNG CỤ -->
 <div class="flex flex-wrap gap-2 bg-white p-3 rounded-lg shadow">
 
 <button onclick="cmd('bold')" class="px-3 py-1 border rounded font-bold">B</button>
@@ -30,13 +28,11 @@
 
 </div>
 
-<!-- VÙNG SOẠN THẢO -->
 <div id="editor" contenteditable="true"
  class="min-h-[400px] bg-white p-4 rounded-lg border leading-relaxed">
 <p>👉 Nhập nội dung bài học ở đây...</p>
 </div>
 
-<!-- NÚT -->
 <div class="flex gap-4 pt-4">
 <button onclick="preview()"
  class="bg-blue-500 text-white px-6 py-3 rounded-xl font-bold">
@@ -52,15 +48,15 @@
 </div>
 
 <script>
-function cmd(command) {
-  document.execCommand(command, false, null);
+function cmd(c) {
+  document.execCommand(c, false, null);
 }
 
 function insertImage() {
   let url = prompt("Dán link ảnh:");
   if(url){
     document.execCommand("insertHTML", false,
-      `<img src="${url}" class="my-4 rounded max-w-full">`);
+      '<img src="' + url + '" class="my-4 rounded max-w-full">');
   }
 }
 
@@ -69,65 +65,58 @@ function insertVideo() {
   if(!url) return;
   let id = url.split("v=")[1] || url.split("/").pop();
   document.execCommand("insertHTML", false,
-    `<iframe class="my-4" width="100%" height="360"
-     src="https://www.youtube.com/embed/${id}"
-     frameborder="0" allowfullscreen></iframe>`);
+    '<iframe class="my-4" width="100%" height="360" ' +
+    'src="https://www.youtube.com/embed/' + id + '" ' +
+    'frameborder="0" allowfullscreen></iframe>');
 }
 
 function insertPPT() {
-  let url = prompt("Dán link Google Slides (chia sẻ):");
+  let url = prompt("Dán link Google Slides:");
   if(!url) return;
   let embed = url.replace("/edit","/embed");
   document.execCommand("insertHTML", false,
-    `<iframe class="my-4" src="${embed}"
-     width="100%" height="480" allowfullscreen></iframe>`);
+    '<iframe class="my-4" src="' + embed +
+    '" width="100%" height="480" allowfullscreen></iframe>');
 }
 
 function insertQuestion() {
   let q = prompt("Nhập câu hỏi:");
   if(!q) return;
   document.execCommand("insertHTML", false,
-  `<div class="my-4 p-3 border rounded bg-yellow-50">
-    ❓ <strong>${q}</strong>
-    <ul class="list-disc ml-6">
-      <li>Đáp án A</li>
-      <li>Đáp án B</li>
-      <li>Đáp án C</li>
-      <li>Đáp án D</li>
-    </ul>
-  </div>`);
+    '<div class="my-4 p-3 border rounded bg-yellow-50">' +
+    '❓ <strong>' + q + '</strong>' +
+    '<ul class="list-disc ml-6">' +
+    '<li>A</li><li>B</li><li>C</li><li>D</li>' +
+    '</ul></div>');
 }
 
 function preview() {
   let win = window.open();
-  win.document.write(`
-  <html><head>
-  <title>Xem trước</title>
-  <script src="https://cdn.tailwindcss.com"><\/script>
-  </head><body class="p-6">
-  <h1 class="text-3xl font-bold mb-4">${title.value}</h1>
-  ${editor.innerHTML}
-  </body></html>
-  `);
+  win.document.write(
+    '<html><head><title>Xem trước</title>' +
+    '<script src="https://cdn.tailwindcss.com"><\/script>' +
+    '</head><body class="p-6">' +
+    '<h1 class="text-3xl font-bold mb-4">' +
+    document.getElementById("title").value +
+    '</h1>' +
+    document.getElementById("editor").innerHTML +
+    '</body></html>'
+  );
 }
 
 function exportHTML() {
-  let html = `
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<title>${title.value}</title>
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#fcfbf8] p-6">
-<h1 class="text-3xl font-bold mb-4">${title.value}</h1>
-${editor.innerHTML}
-</body>
-</html>
-`;
+  let html =
+'<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">' +
+'<title>' + document.getElementById("title").value + '</title>' +
+'<script src="https://cdn.tailwindcss.com"><\/script></head>' +
+'<body class="bg-[#fcfbf8] p-6">' +
+'<h1 class="text-3xl font-bold mb-4">' +
+document.getElementById("title").value +
+'</h1>' +
+document.getElementById("editor").innerHTML +
+'</body></html>';
 
-  let blob = new Blob([html], {type: "text/html"});
+  let blob = new Blob([html], {type:"text/html"});
   let a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "bai-hoc.html";

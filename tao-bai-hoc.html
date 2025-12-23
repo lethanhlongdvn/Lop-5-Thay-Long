@@ -1,174 +1,134 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
 <title>Tạo bài học - Lớp 5/4</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-<style>
-  .editor {
-    min-height: 300px;
-    outline: none;
-  }
-</style>
 </head>
 
-<body class="bg-[#f9f8f3]">
+<body class="bg-[#fcfbf8] font-sans">
 
-<!-- HEADER -->
-<header class="bg-yellow-400 px-6 py-4 font-bold text-lg shadow">
-  ✍️ TẠO BÀI HỌC – LỚP 5/4 | GV: Lê Thành Long
-</header>
+<div class="max-w-5xl mx-auto p-6 space-y-4">
 
-<main class="max-w-5xl mx-auto p-6 space-y-4">
+<h1 class="text-3xl font-black">✍️ TẠO BÀI HỌC</h1>
 
-<!-- THÔNG TIN -->
-<div class="bg-white p-4 rounded-xl shadow space-y-3">
-  <input id="lessonTitle" class="w-full p-2 border rounded"
-         placeholder="📘 Tên bài học">
-  <input id="lessonDesc" class="w-full p-2 border rounded"
-         placeholder="📝 Mô tả bài học">
+<!-- TIÊU ĐỀ -->
+<input id="title" placeholder="Nhập tiêu đề bài học..."
+ class="w-full p-3 text-xl font-bold rounded-lg border">
+
+<!-- THANH CÔNG CỤ -->
+<div class="flex flex-wrap gap-2 bg-white p-3 rounded-lg shadow">
+
+<button onclick="cmd('bold')" class="px-3 py-1 border rounded font-bold">B</button>
+<button onclick="cmd('italic')" class="px-3 py-1 border rounded italic">I</button>
+
+<button onclick="insertImage()" class="px-3 py-1 border rounded">🖼 Ảnh</button>
+<button onclick="insertVideo()" class="px-3 py-1 border rounded">🎬 Video</button>
+<button onclick="insertPPT()" class="px-3 py-1 border rounded">📊 PPT</button>
+<button onclick="insertQuestion()" class="px-3 py-1 border rounded">❓ Câu hỏi</button>
+
 </div>
 
-<!-- TOOLBAR -->
-<div class="bg-white p-3 rounded-xl shadow flex gap-2 flex-wrap">
-  <button onclick="cmd('bold')" title="Đậm">🅱️</button>
-  <button onclick="cmd('italic')" title="Nghiêng">𝑰</button>
-  <button onclick="addImage()">🖼️ Ảnh</button>
-  <button onclick="addVideo()">🎬 Video</button>
-  <button onclick="addPPT()">📊 PPT</button>
-  <button onclick="addQuestion()">❓ Câu hỏi</button>
-</div>
-
-<!-- EDITOR -->
+<!-- VÙNG SOẠN THẢO -->
 <div id="editor" contenteditable="true"
-     class="editor bg-white p-4 rounded-xl shadow">
-  <p>👉 Nhập nội dung bài học tại đây...</p>
+ class="min-h-[400px] bg-white p-4 rounded-lg border leading-relaxed">
+<p>👉 Nhập nội dung bài học ở đây...</p>
 </div>
 
-<!-- ACTION -->
-<div class="flex gap-4">
-  <button onclick="preview()"
-          class="px-4 py-2 bg-blue-600 text-white rounded-xl">
-    👀 Xem trước
-  </button>
-  <button onclick="exportHTML()"
-          class="px-4 py-2 bg-green-600 text-white rounded-xl">
-    💾 Xuất HTML
-  </button>
+<!-- NÚT -->
+<div class="flex gap-4 pt-4">
+<button onclick="preview()"
+ class="bg-blue-500 text-white px-6 py-3 rounded-xl font-bold">
+👀 Xem trước
+</button>
+
+<button onclick="exportHTML()"
+ class="bg-green-500 text-white px-6 py-3 rounded-xl font-bold">
+💾 Xuất HTML
+</button>
 </div>
 
-</main>
+</div>
 
 <script>
-const editor = document.getElementById("editor");
-
-function focusEditor() {
-  editor.focus();
-}
-
 function cmd(command) {
-  focusEditor();
   document.execCommand(command, false, null);
 }
 
-function insert(html) {
-  focusEditor();
-  document.execCommand("insertHTML", false, html);
-}
-
-function addImage() {
-  const url = prompt("Dán link ảnh:");
-  if (!url) return;
-  insert(`<img src="${url}" class="my-4 rounded-xl max-w-full">`);
-}
-
-function addVideo() {
-  const url = prompt("Dán link YouTube:");
-  if (!url) return;
-
-  const id = url.includes("v=")
-    ? url.split("v=")[1].split("&")[0]
-    : url.split("/").pop();
-
-  insert(`
-    <iframe class="my-4"
-      width="100%" height="360"
-      src="https://www.youtube.com/embed/${id}"
-      allowfullscreen>
-    </iframe>
-  `);
-}
-
-function addPPT() {
-  const url = prompt("Dán link Google Slides:");
-  if (!url) return;
-
-  const match = url.match(/presentation\/d\/([^/]+)/);
-  if (!match) {
-    alert("Link Google Slides không hợp lệ");
-    return;
+function insertImage() {
+  let url = prompt("Dán link ảnh:");
+  if(url){
+    document.execCommand("insertHTML", false,
+      `<img src="${url}" class="my-4 rounded max-w-full">`);
   }
-
-  insert(`
-    <iframe class="my-4"
-      src="https://docs.google.com/presentation/d/${match[1]}/embed"
-      width="100%" height="480"
-      allowfullscreen>
-    </iframe>
-  `);
 }
 
-function addQuestion() {
-  insert(`
-    <div class="my-4 p-3 border-l-4 border-yellow-400 bg-yellow-50">
-      <strong>❓ Câu hỏi:</strong>
-      <input class="w-full mt-2 p-2 border rounded"
-             placeholder="Nhập câu hỏi cho học sinh...">
-    </div>
-  `);
+function insertVideo() {
+  let url = prompt("Dán link YouTube:");
+  if(!url) return;
+  let id = url.split("v=")[1] || url.split("/").pop();
+  document.execCommand("insertHTML", false,
+    `<iframe class="my-4" width="100%" height="360"
+     src="https://www.youtube.com/embed/${id}"
+     frameborder="0" allowfullscreen></iframe>`);
+}
+
+function insertPPT() {
+  let url = prompt("Dán link Google Slides (chia sẻ):");
+  if(!url) return;
+  let embed = url.replace("/edit","/embed");
+  document.execCommand("insertHTML", false,
+    `<iframe class="my-4" src="${embed}"
+     width="100%" height="480" allowfullscreen></iframe>`);
+}
+
+function insertQuestion() {
+  let q = prompt("Nhập câu hỏi:");
+  if(!q) return;
+  document.execCommand("insertHTML", false,
+  `<div class="my-4 p-3 border rounded bg-yellow-50">
+    ❓ <strong>${q}</strong>
+    <ul class="list-disc ml-6">
+      <li>Đáp án A</li>
+      <li>Đáp án B</li>
+      <li>Đáp án C</li>
+      <li>Đáp án D</li>
+    </ul>
+  </div>`);
 }
 
 function preview() {
-  const win = window.open("", "_blank");
+  let win = window.open();
   win.document.write(`
-<!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#f9f8f3] p-6">
-<h1 class="text-3xl font-bold">${lessonTitle.value}</h1>
-<p class="mb-4">${lessonDesc.value}</p>
-${editor.innerHTML}
-</body></html>
+  <html><head>
+  <title>Xem trước</title>
+  <script src="https://cdn.tailwindcss.com"><\/script>
+  </head><body class="p-6">
+  <h1 class="text-3xl font-bold mb-4">${title.value}</h1>
+  ${editor.innerHTML}
+  </body></html>
   `);
 }
 
 function exportHTML() {
-  const html = `
+  let html = `
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<title>${lessonTitle.value}</title>
+<meta charset="utf-8">
+<title>${title.value}</title>
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#f9f8f3]">
-<div class="max-w-3xl mx-auto p-6">
-<h1 class="text-3xl font-bold">${lessonTitle.value}</h1>
-<p class="mb-4">${lessonDesc.value}</p>
+<body class="bg-[#fcfbf8] p-6">
+<h1 class="text-3xl font-bold mb-4">${title.value}</h1>
 ${editor.innerHTML}
-</div>
 </body>
 </html>
-  `;
+`;
 
-  const blob = new Blob([html], { type: "text/html" });
-  const a = document.createElement("a");
+  let blob = new Blob([html], {type: "text/html"});
+  let a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "bai-hoc.html";
   a.click();

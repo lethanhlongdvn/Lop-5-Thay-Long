@@ -3,137 +3,173 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Trang chủ - Lớp 5</title>
+<title>Trang chủ - Lớp 5/4</title>
 
 <!-- Fonts & Tailwind -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+
+<script>
 tailwind.config = {
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "primary": "#f4af25",
+        primary: "#f4af25",
         "background-light": "#f8f7f5",
         "background-dark": "#221c10",
         "text-main": "#1c170d",
         "text-secondary": "#9c8149",
       },
-      fontFamily: { "display": ["Lexend", "sans-serif"] },
-      borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
-    },
-  },
+      fontFamily: {
+        display: ["Lexend", "sans-serif"]
+      },
+      borderRadius: {
+        DEFAULT: "0.5rem",
+        lg: "1rem",
+        xl: "1.5rem",
+        full: "9999px"
+      }
+    }
+  }
 }
 </script>
+
 <style>
 body { font-family: 'Lexend', sans-serif; }
-.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-.material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1;
+}
 </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white overflow-x-hidden transition-colors duration-200">
+
 <div class="flex min-h-screen w-full">
 
-<!-- Sidebar (đã đồng bộ) -->
-<aside class="hidden w-72 flex-col justify-between border-r border-[#f4efe7] dark:border-[#3a3225] bg-white dark:bg-[#1a150c] p-6 lg:flex sticky top-0 h-screen">
+<!-- Overlay mobile -->
+<div id="sidebar-overlay" class="fixed inset-0 z-40 bg-black/40 hidden lg:hidden"></div>
+
+<!-- SIDEBAR -->
+<aside id="sidebar"
+  class="fixed lg:sticky top-0 left-0 z-50 hidden lg:flex w-72 h-screen flex-col justify-between
+         border-r border-[#f4efe7] dark:border-[#3a3225]
+         bg-white dark:bg-[#1a150c] p-6">
+
   <div class="flex flex-col gap-8">
     <div class="flex items-center gap-4">
-      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shadow-sm border-2 border-primary/20"
-        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbt3HMOjphqIHq5Vr6T9bhupTpbM3Hec0CaLvgNH8AfDqE7wZ2FfLntJIUk4fZCfdUmgLno0pqzNryYQYudmrqmPPBuiFZO8XYmEKNZDn_b2DmSE6PP173ZxXANE6sQT0JKyJysETuAbl93KAOzAgP4foUQSdLjzzs98wytRnoMctaz4GA4g_iiC89uBIXakTGhqNz4gOOiL3KQ95x2hjuHfQ4HIcM5OffexEjpbXXSvjcdHCII_vA8X94VT5j71g93iScmb1W90Qd");'></div>
-      <div class="flex flex-col">
-        <h1 class="text-text-main dark:text-white text-lg font-bold leading-tight">Trường TH Đỗ Văn Nại</h1>
-        <p class="text-text-secondary dark:text-gray-400 text-sm font-normal">Năm học 2025 - 2026</p>
+      <div class="bg-center bg-cover rounded-full size-12 border-2 border-primary/20"
+        style='background-image:url("https://via.placeholder.com/100")'></div>
+      <div>
+        <h1 class="font-bold text-lg">TH Đỗ Văn Nại</h1>
+        <p class="text-sm text-text-secondary">GVCN: Lê Thành Long</p>
       </div>
     </div>
 
     <nav class="flex flex-col gap-2">
-      <a href="index.html" class="nav-item">
-        <span class="material-symbols-outlined text-2xl">grid_view</span>
-        <span class="text-base font-medium">Trang chủ</span>
+      <a href="index.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">grid_view</span> Trang chủ
       </a>
-      <a href="mon-hoc.html" class="nav-item">
-        <span class="material-symbols-outlined text-2xl">book_2</span>
-        <span class="text-base font-medium">Môn học</span>
+      <a href="mon-hoc.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">book</span> Môn học
       </a>
-      <a href="hoc-sinh.html" class="nav-item">
-        <span class="material-symbols-outlined text-2xl">groups</span>
-        <span class="text-base font-medium">Học sinh</span>
+      <a href="hoc-sinh.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">groups</span> Học sinh
       </a>
-      <a href="diem-so.html" class="nav-item">
-        <span class="material-symbols-outlined text-2xl">bar_chart</span>
-        <span class="text-base font-medium">Điểm số</span>
-      </a>
-      <a href="lich-trinh.html" class="nav-item">
-        <span class="material-symbols-outlined text-2xl">calendar_month</span>
-        <span class="text-base font-medium">Lịch trình</span>
+      <a href="diem-so.html" class="nav-item flex items-center gap-4 px-4 py-2 rounded-xl">
+        <span class="material-symbols-outlined">emoji_events</span> Điểm số
       </a>
     </nav>
   </div>
 
-  <div class="flex flex-col gap-4">
-    <div class="h-px w-full bg-[#f4efe7] dark:bg-[#3a3225]"></div>
-    <a href="#" class="flex items-center gap-4 px-4 py-2 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 text-red-600 transition-colors">
-      <span class="material-symbols-outlined text-2xl">logout</span>
-      <span class="text-base font-medium">Đăng xuất</span>
-    </a>
+  <div class="border-t pt-4 text-sm text-text-secondary">
+    Năm học 2025 – 2026
   </div>
 </aside>
 
-<main class="flex flex-1 flex-col h-screen overflow-y-auto relative">
-<header class="sticky top-0 z-20 flex items-center justify-between border-b border-[#f4efe7] dark:border-[#3a3225] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 md:px-8 py-4">
-  <div class="flex items-center gap-3 md:gap-4">
-    <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2c2415] text-text-main dark:text-white">
+<!-- MAIN -->
+<div class="flex flex-1 flex-col h-screen overflow-y-auto">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-4 md:px-8 py-4
+border-b border-[#f4efe7] dark:border-[#3a3225]
+bg-background-light/80 dark:bg-background-dark/80 backdrop-blur">
+
+  <div class="flex items-center gap-3">
+    <button id="btn-open-sidebar" class="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-[#2c2415]">
       <span class="material-symbols-outlined">menu</span>
     </button>
-    <div class="flex items-center gap-2 text-text-secondary dark:text-gray-400">
-      <span class="material-symbols-outlined text-xl">school</span>
-      <h2 class="text-lg font-medium whitespace-nowrap">Lớp 5A</h2>
-    </div>
+    <h2 class="text-lg font-medium">Lớp 5/4</h2>
   </div>
-  <div class="flex items-center gap-3 md:gap-6">
-    <div class="hidden md:flex relative group">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <span class="material-symbols-outlined text-text-secondary dark:text-gray-500">search</span>
-      </div>
-      <input class="block w-64 lg:w-80 rounded-xl border-none bg-white dark:bg-[#2c2415] py-2.5 pl-10 pr-4 text-sm text-text-main dark:text-white placeholder-text-secondary dark:placeholder-gray-500 focus:ring-2 focus:ring-primary shadow-sm" placeholder="Tìm kiếm nhanh..." type="text"/>
-    </div>
-    <button class="relative p-2 rounded-full hover:bg-white dark:hover:bg-[#2c2415] transition-colors">
-      <span class="material-symbols-outlined text-text-main dark:text-white">notifications</span>
-      <span class="absolute top-1.5 right-1.5 size-2.5 rounded-full bg-red-500 border-2 border-background-light dark:border-background-dark"></span>
-    </button>
-    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-[#2c2415] shadow-sm cursor-pointer"
-      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBVcsPEf2sMT8SoYf9Nz9SzgfjZiSgxy27fm516JG8e8EScxJjudXzi32XB6bH-9_XicLMwnJgkiUxikTahGvrt0-FmvSEFTmIvMi7gxEn_ZLUDkb7ITlqVtFRNCwzb0ark-lJVwAx751N-T7YpS1T8HLsQfQm8H1CNlc6vAeloHwZL00HOiFlLFYGgojvRd_rpXOlftXB08ZxmEcCSz7qQvq4E9XPf-5VM0Z7QM6WDNTNSTLiuv1kDbMW-NLFuq9kS-kuQ5FhFfFGd");'>
-    </div>
-  </div>
+
 </header>
 
-<!-- Nội dung trang chính -->
-<section class="flex-1 p-8">
-  <h1 class="text-3xl font-black mb-4">Trang chủ</h1>
-  <p class="text-text-secondary dark:text-gray-400">Chào mừng đến với hệ thống quản lý lớp học.</p>
-</section>
+<!-- CONTENT -->
+<main id="app-content" class="flex-1 p-6 md:p-8 space-y-6">
+
+  <div>
+    <h1 id="page-title" class="text-3xl font-black">Trang chủ</h1>
+    <p class="text-text-secondary">Website lớp 5/4 – Trường Tiểu học Đỗ Văn Nại</p>
+  </div>
+
+  <div id="page-body" class="space-y-6">
+
+    <div class="bg-white dark:bg-[#1a150c] rounded-xl p-6 border">
+      <h2 class="text-2xl font-bold mb-2">Chào mừng các em đến với lớp 5/4 🎒</h2>
+      <p>Website hỗ trợ học tập, ôn luyện Toán và theo dõi hoạt động lớp.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a href="mon-hoc.html" class="bg-primary/10 hover:bg-primary/20 rounded-xl p-6">
+        <span class="material-symbols-outlined text-4xl text-primary">book</span>
+        <h3 class="font-bold mt-2">Môn học</h3>
+      </a>
+      <a href="hoc-sinh.html" class="bg-primary/10 hover:bg-primary/20 rounded-xl p-6">
+        <span class="material-symbols-outlined text-4xl text-primary">groups</span>
+        <h3 class="font-bold mt-2">Học sinh</h3>
+      </a>
+      <a href="diem-so.html" class="bg-primary/10 hover:bg-primary/20 rounded-xl p-6">
+        <span class="material-symbols-outlined text-4xl text-primary">emoji_events</span>
+        <h3 class="font-bold mt-2">Thi đua</h3>
+      </a>
+    </div>
+
+  </div>
 </main>
+
+</div>
 </div>
 
-<!-- Active menu -->
+<!-- SCRIPT -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const path = window.location.pathname.split("/").pop();
-  document.querySelectorAll(".nav-item").forEach(link => {
-    const icon = link.querySelector(".material-symbols-outlined");
-    if (link.getAttribute("href") === path) {
-      link.classList.add("bg-primary/10", "dark:bg-primary/20", "font-bold", "text-text-main", "dark:text-primary");
-      icon.classList.add("fill", "text-primary");
-    } else {
-      link.classList.add("text-text-main", "dark:text-gray-200", "hover:bg-gray-50", "dark:hover:bg-[#2c2415]");
-    }
-  });
+// active menu
+document.querySelectorAll(".nav-item").forEach(link => {
+  if (link.getAttribute("href") === "index.html") {
+    link.classList.add("bg-primary/20", "font-bold");
+    link.querySelector("span").classList.add("fill");
+  }
 });
+
+// mobile sidebar
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("sidebar-overlay");
+const btn = document.getElementById("btn-open-sidebar");
+
+btn.onclick = () => {
+  sidebar.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+overlay.onclick = () => {
+  sidebar.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
 </script>
+
 </body>
 </html>

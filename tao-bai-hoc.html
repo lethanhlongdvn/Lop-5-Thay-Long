@@ -16,6 +16,7 @@
 <input id="title" placeholder="Nhập tiêu đề bài học..."
  class="w-full p-3 text-xl font-bold rounded-lg border">
 
+<!-- TOOLBAR -->
 <div class="flex flex-wrap gap-2 bg-white p-3 rounded-lg shadow">
 
 <button onclick="cmd('bold')" class="px-3 py-1 border rounded font-bold">B</button>
@@ -24,15 +25,20 @@
 <button onclick="insertImage()" class="px-3 py-1 border rounded">🖼 Ảnh</button>
 <button onclick="insertVideo()" class="px-3 py-1 border rounded">🎬 Video</button>
 <button onclick="insertPPT()" class="px-3 py-1 border rounded">📊 PPT</button>
-<button onclick="insertQuestion()" class="px-3 py-1 border rounded">❓ Câu hỏi</button>
+
+<button onclick="insertFillBlank()" class="px-3 py-1 border rounded">✏️ Điền khuyết</button>
+<button onclick="insertMCQ()" class="px-3 py-1 border rounded">🅰️ Trắc nghiệm</button>
+<button onclick="insertMatch()" class="px-3 py-1 border rounded">🔗 Ghép đôi</button>
 
 </div>
 
+<!-- EDITOR -->
 <div id="editor" contenteditable="true"
- class="min-h-[400px] bg-white p-4 rounded-lg border leading-relaxed">
+ class="min-h-[420px] bg-white p-4 rounded-lg border leading-relaxed">
 <p>👉 Nhập nội dung bài học ở đây...</p>
 </div>
 
+<!-- ACTION -->
 <div class="flex gap-4 pt-4">
 <button onclick="preview()"
  class="bg-blue-500 text-white px-6 py-3 rounded-xl font-bold">
@@ -48,75 +54,154 @@
 </div>
 
 <script>
-function cmd(c) {
-  document.execCommand(c, false, null);
+const editor = document.getElementById("editor");
+
+function cmd(c){
+  document.execCommand(c,false,null);
 }
 
-function insertImage() {
+/* ===== MEDIA ===== */
+function insertImage(){
   let url = prompt("Dán link ảnh:");
   if(url){
-    document.execCommand("insertHTML", false,
-      '<img src="' + url + '" class="my-4 rounded max-w-full">');
+    editor.insertAdjacentHTML("beforeend",
+      '<img src="'+url+'" class="my-4 rounded max-w-full">');
   }
 }
 
-function insertVideo() {
+function insertVideo(){
   let url = prompt("Dán link YouTube:");
   if(!url) return;
   let id = url.split("v=")[1] || url.split("/").pop();
-  document.execCommand("insertHTML", false,
-    '<iframe class="my-4" width="100%" height="360" ' +
-    'src="https://www.youtube.com/embed/' + id + '" ' +
-    'frameborder="0" allowfullscreen></iframe>');
+  editor.insertAdjacentHTML("beforeend",
+    '<iframe class="my-4" width="100%" height="360" '+
+    'src="https://www.youtube.com/embed/'+id+'" allowfullscreen></iframe>');
 }
 
-function insertPPT() {
+function insertPPT(){
   let url = prompt("Dán link Google Slides:");
   if(!url) return;
   let embed = url.replace("/edit","/embed");
-  document.execCommand("insertHTML", false,
-    '<iframe class="my-4" src="' + embed +
+  editor.insertAdjacentHTML("beforeend",
+    '<iframe class="my-4" src="'+embed+
     '" width="100%" height="480" allowfullscreen></iframe>');
 }
 
-function insertQuestion() {
+/* ===== BÀI TẬP ===== */
+function insertFillBlank(){
   let q = prompt("Nhập câu hỏi:");
-  if(!q) return;
-  document.execCommand("insertHTML", false,
-    '<div class="my-4 p-3 border rounded bg-yellow-50">' +
-    '❓ <strong>' + q + '</strong>' +
-    '<ul class="list-disc ml-6">' +
-    '<li>A</li><li>B</li><li>C</li><li>D</li>' +
-    '</ul></div>');
+  let a = prompt("Nhập đáp án đúng:");
+  if(!q||!a) return;
+  editor.insertAdjacentHTML("beforeend",`
+  <div class="exercise my-4 p-4 border rounded bg-yellow-50">
+    <p class="font-semibold">${q}</p>
+    <input class="border p-2 rounded mt-2"
+      data-answer="${a}">
+    <button onclick="checkFill(this)"
+      class="ml-2 px-3 py-1 bg-blue-500 text-white rounded">
+      Kiểm tra
+    </button>
+    <span class="ml-2 result"></span>
+  </div>`);
 }
 
-function preview() {
-  let win = window.open();
-  win.document.write(
-    '<html><head><title>Xem trước</title>' +
-    '<script src="https://cdn.tailwindcss.com"><\/script>' +
-    '</head><body class="p-6">' +
-    '<h1 class="text-3xl font-bold mb-4">' +
-    document.getElementById("title").value +
-    '</h1>' +
-    document.getElementById("editor").innerHTML +
-    '</body></html>'
-  );
+function checkFill(btn){
+  let input = btn.previousElementSibling;
+  let r = btn.nextElementSibling;
+  r.innerHTML =
+    input.value.trim().toLowerCase() === input.dataset.answer.toLowerCase()
+    ? "✅ Đúng" : "❌ Sai";
+  r.style.color = r.innerHTML.includes("Đúng") ? "green" : "red";
 }
 
-function exportHTML() {
+function insertMCQ(){
+  let q = prompt("Câu hỏi:");
+  let a = prompt("Đáp án đúng (A/B/C/D):").toUpperCase();
+  if(!q||!a) return;
+  let name = "q"+Date.now();
+  editor.insertAdjacentHTML("beforeend",`
+  <div class="exercise my-4 p-4 border rounded bg-green-50" data-answer="${a}">
+    <p class="font-semibold">${q}</p>
+    <label><input type="radio" name="${name}" value="A"> A</label><br>
+    <label><input type="radio" name="${name}" value="B"> B</label><br>
+    <label><input type="radio" name="${name}" value="C"> C</label><br>
+    <label><input type="radio" name="${name}" value="D"> D</label><br>
+    <button onclick="checkMCQ(this)"
+      class="mt-2 px-3 py-1 bg-blue-500 text-white rounded">
+      Kiểm tra
+    </button>
+    <span class="ml-2 result"></span>
+  </div>`);
+}
+
+function checkMCQ(btn){
+  let box = btn.parentElement;
+  let ans = box.dataset.answer;
+  let checked = box.querySelector("input:checked");
+  let r = btn.nextElementSibling;
+  r.innerHTML = checked && checked.value===ans ? "✅ Đúng":"❌ Sai";
+  r.style.color = r.innerHTML.includes("Đúng") ? "green":"red";
+}
+
+function insertMatch(){
+  editor.insertAdjacentHTML("beforeend",`
+  <div class="exercise my-4 p-4 border rounded bg-purple-50">
+    <p class="font-semibold mb-2">Ghép đúng:</p>
+    <div class="grid grid-cols-2 gap-2">
+      <div>Con mèo</div>
+      <select data-answer="meo">
+        <option value="">-- chọn --</option>
+        <option value="meo">Meo meo</option>
+        <option value="gau">Gâu gâu</option>
+      </select>
+      <div>Con chó</div>
+      <select data-answer="gau">
+        <option value="">-- chọn --</option>
+        <option value="meo">Meo meo</option>
+        <option value="gau">Gâu gâu</option>
+      </select>
+    </div>
+    <button onclick="checkMatch(this)"
+      class="mt-3 px-3 py-1 bg-blue-500 text-white rounded">
+      Kiểm tra
+    </button>
+    <span class="ml-2 result"></span>
+  </div>`);
+}
+
+function checkMatch(btn){
+  let ok = true;
+  btn.parentElement.querySelectorAll("select")
+    .forEach(s=>{ if(s.value!==s.dataset.answer) ok=false; });
+  let r = btn.nextElementSibling;
+  r.innerHTML = ok ? "✅ Đúng":"❌ Sai";
+  r.style.color = ok ? "green":"red";
+}
+
+/* ===== PREVIEW + EXPORT ===== */
+function preview(){
+  let w = window.open();
+  w.document.write(
+    '<html><head><title>Xem trước</title>'+
+    '<script src="https://cdn.tailwindcss.com"><\/script>'+
+    '</head><body class="p-6">'+
+    '<h1 class="text-3xl font-bold mb-4">'+
+    document.getElementById("title").value+
+    '</h1>'+editor.innerHTML+
+    '</body></html>');
+}
+
+function exportHTML(){
   let html =
-'<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">' +
-'<title>' + document.getElementById("title").value + '</title>' +
-'<script src="https://cdn.tailwindcss.com"><\/script></head>' +
-'<body class="bg-[#fcfbf8] p-6">' +
-'<h1 class="text-3xl font-bold mb-4">' +
-document.getElementById("title").value +
-'</h1>' +
-document.getElementById("editor").innerHTML +
+'<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">'+
+'<title>'+title.value+'</title>'+
+'<script src="https://cdn.tailwindcss.com"><\/script></head>'+
+'<body class="bg-[#fcfbf8] p-6">'+
+'<h1 class="text-3xl font-bold mb-4">'+title.value+'</h1>'+
+editor.innerHTML+
 '</body></html>';
 
-  let blob = new Blob([html], {type:"text/html"});
+  let blob = new Blob([html],{type:"text/html"});
   let a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "bai-hoc.html";
